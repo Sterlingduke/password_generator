@@ -39,5 +39,22 @@ function generatePassword() {
 function getPrompts() {
   characterLength = parseInt(prompt("Hello! How many characters do you want your Password to be (8-128)"));
 
-  
+  if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
+    alert("Come On! Invalid amount of character. TRY AGAIN!")
+    return false;
+  }
+  if (confirm("Do you want to add lowercase characters")) {
+    choice= choice.concat(lowerCase);
+  }
+  if (confirm("So you want to add UPPERCASE characters")) {
+    choice = choice.concat(upperCase);
+  }
+  if (confirm("So you want to add Number characters?")) {
+    
+    choice = choice.concat(numbers);
+  }
+  if (confirm("Do you want to add Special characters?")) {
+    choice = choice.concat(special);
+  }
+  return true;
 }
